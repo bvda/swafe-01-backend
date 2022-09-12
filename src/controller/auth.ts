@@ -19,9 +19,10 @@ export const verifyToken = function(req: Request, res: Response, next: NextFunct
   }
   
   const auth_parts = authorization?.split(' ') ?? []
-  if(auth_parts && auth_parts.length > 2) {
+  if(auth_parts && auth_parts.length == 2) {
     try {
       const decoded: any = jwt.verify(auth_parts[1], suchSecret)
+      console.log(decoded)
       if(decoded['role'] === 'fancy_pants') {
         next()
       } else {

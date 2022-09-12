@@ -6,6 +6,7 @@ const router = Router();
 router.use(cors());
 
 router.get('/', clientController.list);
+router.get('/faulty', clientController.faultyList);
 
 export { router }
 

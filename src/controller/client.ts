@@ -13,6 +13,6 @@ export const faultyList = function(req: Request, res: Response) {
         message: 'An error has occured'
       })
   } else {
-    res.json(clients)
+    res.json({ clients })
   }
 }
